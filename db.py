@@ -32,10 +32,10 @@ class DataBase(object):
         if self.conn is None:
             try:
                 self.conn = psycopg2.connect(
-                    dbname='inst', 
-                    user='python', 
-                    password='python', 
-                    host='localhost'
+                    dbname=self.dbname, 
+                    user=self.user, 
+                    password=self.password, 
+                    host=self.host
                 )
             except psycopg2.DatabaseError as e:
                 logging.error('Database connect error', e)
